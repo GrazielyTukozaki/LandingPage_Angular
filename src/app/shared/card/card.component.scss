@@ -13,4 +13,9 @@
         padding: 1.5rem 0;
         cursor: pointer;
     }
+    &_h3:hover{
+        color: var(--danger-color-2);
+        font-size: 2rem;
+        transition: 5ms ease-out;
+    }
 }

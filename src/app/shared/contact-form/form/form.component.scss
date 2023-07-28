@@ -1,0 +1,71 @@
+input, textarea {
+    padding-top: 1rem;
+    background: transparent;
+    border: 0.1rem solid var(--white);
+    width: 42vw;
+    color: var(--white);
+}
+
+input:active,
+select:active {
+  border: 0.1rem solid var(--primary-color);
+}
+
+
+input:checked{
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: auto;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+
+label, p {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 4rem;
+    &_multicol{
+        display: flex;
+    }
+    &_name, &_cnpj, &_social, &_cellphone, &_email,&_messsage{
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &_social, &_cnpj{
+        input{
+            width: 20vw;
+        }
+    }
+    &_cnpj{
+        padding-left: 3rem;
+    }
+    &_interests{
+        padding: 1rem 0;
+        padding-right: 3rem;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        input{
+            width: 10%;
+            align-self: center;
+            margin-bottom: 1rem;
+        }
+        label{
+            padding-right: 0rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &_btn{
+        padding-top: 2rem;
+    }
+}
