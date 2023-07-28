@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TextBanner } from '../models/textBanner.interface';
+import { BannerData } from '../models/banner-data';
 import { BtnComponent } from '../btn/btn.component';
 
 @Component({
@@ -10,13 +10,13 @@ import { BtnComponent } from '../btn/btn.component';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent {
-@Input() public image = ""
-@Input() public text: TextBanner = {
-  heading : "Teste",
-  cta: "teste"
-};
+  @Input() public data: BannerData = {
+    image : "Teste",
+    heading : "Teste",
+    cta: "teste"
+  };
+  
+  public contactForm():void{
 
-public contactForm():void{
-
-}
+  }
 }

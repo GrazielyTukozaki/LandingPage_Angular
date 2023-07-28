@@ -1,30 +1,40 @@
 import { Injectable } from '@angular/core';
-import { CarrouselCard } from '../shared/models/carrouselCard.interface';
+import { CarrouselCardPayload } from '../shared/models/carrouselCard.interface';
+import { environment } from 'src/environments/environment';
+import { Observable, Subject, take } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BannerPayload } from '../shared/models/banner-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  public cardImages: CarrouselCard[] = [
-    {
-      image: "../../../assets/images/Tratores.webp",
-      title: "Aluguel de tratores",
-    },
-    {
-      image: "../../../assets/images/Transbordos.webp",
-      title: "Aluguel de transbordos",
-    },
-    {
-      image: "../../../assets/images/Plantadeira.webp",
-      title: "Aluguel de plantadeira",
-    },
-    {
-      image: "../../../assets/images/Pulverizadores.webp",
-      title: "Aluguel de pulverizadores",
-    }
-  ]
-  public getCarrouselImages():CarrouselCard[]{
-    return this.cardImages;
+  private API = `${environment.apiHost}`;
+  private _carrouselListSubject = new Subject<CarrouselCardPayload>();
+  private _bannerSubject = new Subject<BannerPayload>();
+  public readonly cardData$: Observable<CarrouselCardPayload> =
+    this._carrouselListSubject.asObservable();
+  public readonly banner$: Observable<BannerPayload> =
+  this._bannerSubject.asObservable();
+  
+    constructor(private _http: HttpClient) {}
+
+  public getCarrouselImages():void {
+    this._http
+      .get<CarrouselCardPayload>(`${this.API}carrousel-cards?populate=*`)
+      .pipe(take(1))
+      .subscribe(response => {
+        this._carrouselListSubject.next(response)
+      })
+  }
+
+  public getBannerImage():void {
+    this._http
+      .get<BannerPayload>(`${this.API}text-banners?populate=*`)
+      .pipe(take(1))
+      .subscribe(response => {
+        this._bannerSubject.next(response)
+      })
   }
 }
