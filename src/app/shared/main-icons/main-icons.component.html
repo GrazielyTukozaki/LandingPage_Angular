@@ -1,0 +1,8 @@
+<div class="container">
+    <ng-container *ngFor="let icon of icons">
+        <div class="container_wrapper">
+            <app-icon [iconName]="icon.image" iconSize="4"></app-icon>
+            <h4>{{icon.text}}</h4>
+        </div>
+    </ng-container>
+</div>

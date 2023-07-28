@@ -1,1 +1,16 @@
-<p>card works!</p>
+<div class="container">
+    <div class="container_img-container">
+        <img [src]="card.image" [alt]="card.title" class="container_img-item" />
+    </div>
+    <h2 class="container_h2">
+        {{ card.title}}
+    </h2>
+    <h3 class="container_h3">Saiba +</h3>
+    <div class="container_btn">
+        <app-btn color="primary" (btnClick)="contactForm()">
+            <span btn-content>
+                QUERO ALUGAR!
+            </span>
+        </app-btn>
+    </div>
+</div>

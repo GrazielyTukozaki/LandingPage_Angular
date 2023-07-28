@@ -1,1 +1,16 @@
-<p>carousel works!</p>
+<div class="container">
+    <app-btn color="primary" (btnClick)="prev()">
+        <app-icon btn-content iconName="arrow-left" iconColor="white" />
+    </app-btn>
+    <div class="container_wrapper-card">
+        <ng-container *ngFor="let item of cards">
+            <app-card [card]="{
+                image: item.image,
+                title: item.title,
+              }" />
+        </ng-container>
+    </div>
+    <app-btn color="primary" (btnClick)="next()">
+        <app-icon btn-content iconName="arrow-right" iconColor="white" />
+    </app-btn>
+</div>

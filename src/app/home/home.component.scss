@@ -1,0 +1,46 @@
+.container{
+    &_text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 6rem;
+    }
+    &_description{
+        padding: 0 4rem;
+        padding-top: 2rem;
+    }
+    &_textHighlight{
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+}
+
+.content{
+    background-color: var(--primary-color);
+    margin: 6rem 0;
+    display: flex;
+    &_img-wrapper{
+        width: 100%;
+        padding: 4rem;
+        padding-left: 6rem;
+    }
+    &_img{
+        width: 100%;
+    }
+    &_text{
+        padding-top: 4rem;
+        color: var(--white);
+    }
+    h3{
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
+    p {
+        font-size: 1.8rem;
+        padding: 2rem 4rem;
+        padding-left: 0;
+    }
+    &_btn{
+        padding-top: 8rem;
+    }
+}

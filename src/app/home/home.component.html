@@ -1,3 +1,44 @@
-<app-banner [text]="bannerText" [image]="bannerImg"></app-banner>
-<app-carousel></app-carousel>
-<app-contact-form></app-contact-form>
+<div class="container">
+    <app-banner [text]="bannerText" [image]="bannerImg"></app-banner>
+    <div class="container_text">
+        <h2>Conheça nossa linha completa máquinas pesadas</h2>
+        <p class="container_description">
+            Com a <span class="container_textHighlight">Vamos</span> você aluga sua frota e <span
+                class="container_textHighlight">economiza até 30%.</span>
+            Quem faz as contas, não compra, aluga!
+        </p>
+    </div>
+    <section id="carrousel">
+        <app-carousel></app-carousel>
+    </section>
+    <section id="highligth" class="content">
+        <div class="content_img-wrapper">
+            <img src="../../assets/images/aluguel.webp" class="content_img">
+        </div>
+        <div class="content_text">
+            <h3>Por que alugar com a Vamos Locação?</h3>
+            <p>Imagine nem lembrar que caminhão existe e ter o foco apenas no seu negócio. Com a opção de não ter gastos
+                com manutenção de frota, gestão de documentação, veículos parados, e nem mesmo ter que gastar para
+                comprar.</p>
+            <p>
+                A gestão de uma frota própria exige investimento de tempo, recursos e dedicação integral. Isso faz com
+                que muitas empresas deixem de focar em suas atividades principais, comprometendo os resultados de seus
+                negócios. Com a Vamos você aluga sua frota e economiza até 30% porque quem faz as contas, não compra,
+                aluga!
+            </p>
+            <div class="content_btn">
+                <app-btn color="tertiary" (btnClick)="contactForm()">
+                    <span btn-content>
+                        QUERO ALUGAR!
+                    </span>
+                </app-btn>
+            </div>
+        </div>
+    </section>
+    <section id="main-icons">
+        <app-main-icons></app-main-icons>
+    </section>
+    <section id="form">
+        <app-contact-form></app-contact-form>
+    </section>
+</div>
