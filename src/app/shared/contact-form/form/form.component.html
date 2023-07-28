@@ -1,0 +1,42 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="wrapper">
+    <div class="wrapper_name">
+        <label class="wrapper_label">Nome</label>
+        <input type="text" formControlName="name" />
+    </div>
+    <div class="wrapper_multicol">
+        <div class="wrapper_social">
+            <label class="wrapper_label">Razão Social</label>
+            <input type="text" formControlName="socialName" />
+        </div>
+        <div class="wrapper_cnpj">
+            <label class="wrapper_label">CNPJ</label>
+            <input type="text" formControlName="cnpj" />
+        </div>
+    </div>
+    <div class="wrapper_cellphone">
+        <label class="wrapper_label">Celular</label>
+        <input type="text" formControlName="cellphone" />
+    </div>
+    <div class="wrapper_email">
+        <label class="wrapper_label">E-mail</label>
+        <input type="text" formControlName="email" />
+    </div>
+    <p>Interesses</p>
+    <div class="wrapper_interests">
+        <ng-container *ngFor="let item of interestList">
+            <label class="wrapper_label">{{ item.value }}</label>
+            <input type="checkbox" formArrayName="interests" [value]="item.value" (change)="onCheckboxChange($event)">
+        </ng-container>
+    </div>
+    <div class="wrapper_messsage">
+        <label class="wrapper_label">Mensagem</label>
+        <textarea rows="4" cols="50" formControlName="message"> </textarea>
+    </div>
+    <div class="wrapper_btn">
+        <app-btn color="tertiary" [type]="'submit'">
+            <span btn-content>
+                FALE CONOSCO!
+            </span>
+        </app-btn>
+    </div>
+</form>

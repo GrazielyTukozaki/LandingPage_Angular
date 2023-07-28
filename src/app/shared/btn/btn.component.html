@@ -1,1 +1,3 @@
-<p>btn works!</p>
+<button (click)="btnClick()" [type]="type" [ngClass]="disabled ? 'btn-disabled' : color" [disabled]="disabled">
+    <ng-content select="[btn-content]"></ng-content>
+</button>

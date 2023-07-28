@@ -1,0 +1,10 @@
+.container{
+    padding: 0 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_wrapper-card{
+        display: flex;
+        align-items: baseline;
+    }
+}

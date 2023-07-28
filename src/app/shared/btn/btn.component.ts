@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./btn.component.scss']
 })
 export class BtnComponent {
+  @Input() public color = 'warning';
+  @Input() public type = 'button';
+  @Input() public disabled = false;
 
+  @Output() public btnClickEvent = new EventEmitter<any>();
+
+  public btnWithIcon = false;
+
+  public btnClick(): void {
+    this.btnClickEvent.emit();
+  }
 }
