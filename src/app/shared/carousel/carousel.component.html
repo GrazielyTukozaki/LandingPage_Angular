@@ -5,9 +5,9 @@
     <div class="container_wrapper-card">
         <ng-container *ngFor="let item of cards">
             <app-card [card]="{
-                image: item.image,
-                title: item.title,
-              }" />
+                    image: item.image,
+                    title: item.title,
+                  }" />
         </ng-container>
     </div>
     <app-btn color="primary" (btnClick)="next()">
