@@ -1,1 +1,21 @@
-<p>banner works!</p>
+<section id="banner">
+    <div class="container">
+        <div class="container_imgWrapper">
+            <img [src]="image" class="container_img">
+        </div>
+        <div class="container_wrapper">
+            <img src="../../../assets/images/logo.webp" class="container_logo">
+            <div class="container_ctawrapper">
+                <p>{{text.heading}}</p>
+                <p>{{text.cta}}</p>
+                <div class="container_btn">
+                    <app-btn color="tertiary" btnClick="contactForm()">
+                        <span btn-content>
+                            QUERO ALUGAR!
+                        </span>
+                    </app-btn>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
